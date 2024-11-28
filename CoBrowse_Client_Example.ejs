@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>WebMessaging</title>
+    <script src="https://sdk-cdn.mypurecloud.com/javascript/151.0.0/purecloud-platform-client-v2.min.js"></script>
+    //Genesys Messenger JavaScript Plugin
+    <script type="text/javascript" charset="utf-8">
+        (function (g, e, n, es, ys) {
+            g['_genesysJs'] = e;
+            g[e] = g[e] || function () {
+                (g[e].q = g[e].q || []).push(arguments)
+            };
+            g[e].t = 1 * new Date();
+            g[e].c = es;
+            ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+        })(window, 'Genesys', 'https://apps.mypurecloud.com.au/genesys-bootstrap/genesys.min.js', {
+            environment: 'apse2',
+            deploymentId: 'b0835767-8b54-4265-bc0f-cab53543f0c1'
+        });
+    </script>
+</head>
+
+<body>
+
+    <script>
+
+        //Step 1: Subscribe to conversation 
+        Genesys("subscribe", "MessagingService.messagesReceived", function (o) {
+            try {
+                //Step 2: Receive a callback event on all the incoming/outgoing messages in Genesys
+                console.log('Message received')
+                console.log('Message - ' + JSON.stringify(o))
+                console.log('' + o.data.messages[0].events[0].eventType);
+                //checking if the incoming event is of type "CoBrowse", direction is "Outbound" and CoBrowse type is "Offering" to identify if the event is related to agent offering CoBrowse
+                if (o.data.messages[0].direction == "Outbound" && o.data.messages[0].events[0].eventType == "CoBrowse" && o.data.messages[0].events[0].coBrowse.type == "Offering") {
+
+                    console.log('CoBrowse Event Detected');
+                    messageId = o.data.messages[0].id //Get Message ID from the event payload
+                    //Step 3: Send a post request to backend service along with the message ID as a query parameter
+                    fetch('http://localhost:1337/privacy?messageId=' + messageId)
+                        .then((response) => response.json())
+                        .then((data) => console.log(data));
+                } else {
+
+                }
+            } catch (err) {
+                console.error(err)
+            }
+        });
+
+    </script>
+    
+
+
+</body>
+
+</html>

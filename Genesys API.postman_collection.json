@@ -1,0 +1,750 @@
+{
+	"info": {
+		"_postman_id": "761890ff-8312-4d09-83e2-7736a88ceac5",
+		"name": "Genesys API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Access Token (Client Credentials)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZDk0ZWQ5N2MtMzA5ZS00OGZiLWI0MjMtMmYzZTcxMjM0N",
+						"description": "//Need to be Base64 encoded with format <CLIENT_ID>:<CLIENT_SECRET>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://login.mypurecloud.com.au/oauth/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"mypurecloud",
+						"com",
+						"au"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZDk0ZWQ5N2MtMzA5ZS00OGZiLWI0MjM",
+								"description": "//Need to be Base64 encoded with format <CLIENT_ID>:<CLIENT_SECRET>",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "grant_type",
+								"value": "client_credentials",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://login.mypurecloud.com.au/oauth/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Create Access Token (Client Credentials)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZDk0ZWQ5N2MtMzA5ZS00OGZiLWI0MjMtMmYzZTcxMjM0NmQyOnBXYklGclItYjZOaGJKbWc1QlR0S210RkRUdzQ2WlA1dkZrMjQweE9fenc=",
+								"description": "//Need to be Base64 encoded with format <CLIENT_ID>:<CLIENT_SECRET>",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "grant_type",
+								"value": "client_credentials",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://login.mypurecloud.com.au/oauth/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 25 Nov 2022 02:37:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "147"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Inin-Correlation-Id",
+							"value": "67bbae61-94e4-42bf-7b72-ae7d83b36d73"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=7776000"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"pW3eMJvFmJ0FGa_H0ouY56WzMQvn3Up5v_AvOktoLUnSySDkxgatA9QYw0jwOM8UGKp\", //Access TOken which will be used for authentication in all other API calls (Created As a variable in postman)\n    \"token_type\": \"bearer\",\n    \"expires_in\": 86399\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Conversation ID my Message ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/{{messageId}}/details",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mypurecloud",
+						"com",
+						"au"
+					],
+					"path": [
+						"api",
+						"v2",
+						"conversations",
+						"messages",
+						"{{messageId}}",
+						"details"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/{{messageId}}/details",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"api",
+								"v2",
+								"conversations",
+								"messages",
+								"{{messageId}}",
+								"details"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Example: Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/{{messageId}}/details",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"api",
+								"v2",
+								"conversations",
+								"messages",
+								"{{messageId}}",
+								"details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1396"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Nov 2022 02:45:47 GMT"
+						},
+						{
+							"key": "ININ-Correlation-Id",
+							"value": "0ed803fd-b52c-411d-af59-af53adc8ac89"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=600; includeSubDomains"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 291933b5bb7fbb03efd999a83bb9696a.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SYD1-C2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "OM13kMkAHMEsyY3n0WpLksRbexpSm0Lu4SLY9_P5Ej1lmH2cOtO3jQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"3ba6375853a4e76b2a378b468211c744\",\n    \"providerMessageId\": \"3ba6375853a4e76b2a378b468211c744\",\n    \"timestamp\": \"2022-11-24T05:14:45.186Z\",\n    \"fromAddress\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n    \"toAddress\": \"e8e6252f-0704-4503-954f-29b59a9de13e\",\n    \"direction\": \"outbound\",\n    \"messengerType\": \"webmessaging\",\n    \"textBody\": \"I missed what you said. What was that?\",\n    \"status\": \"delivery-success\",\n    \"normalizedMessage\": {\n        \"id\": \"3ba6375853a4e76b2a378b468211c744\",\n        \"channel\": {\n            \"id\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n            \"platform\": \"WebMessaging\",\n            \"to\": {\n                \"id\": \"e8e6252f-0704-4503-954f-29b59a9de13e\"\n            },\n            \"from\": {\n                \"id\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n                \"idType\": \"Opaque\"\n            },\n            \"time\": \"2022-11-24T05:14:45.186Z\"\n        },\n        \"type\": \"Text\",\n        \"text\": \"I missed what you said. What was that?\",\n        \"originatingEntity\": \"Bot\",\n        \"direction\": \"Outbound\"\n    },\n    \"normalizedReceipts\": [\n        {\n            \"id\": \"3ba6375853a4e76b2a378b468211c744\",\n            \"channel\": {\n                \"id\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n                \"platform\": \"WebMessaging\",\n                \"messageId\": \"3ba6375853a4e76b2a378b468211c744\",\n                \"to\": {\n                    \"id\": \"e8e6252f-0704-4503-954f-29b59a9de13e\"\n                },\n                \"from\": {\n                    \"id\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n                    \"idType\": \"Opaque\"\n                },\n                \"time\": \"2022-11-24T05:14:45.424Z\"\n            },\n            \"type\": \"Receipt\",\n            \"status\": \"Delivered\",\n            \"isFinalReceipt\": false,\n            \"direction\": \"Outbound\"\n        }\n    ],\n    \"conversationId\": \"817da6cd-a1dc-456c-b627-45b086cf79ef\", //Conversation ID which needs to be extracted\n    \"selfUri\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/3ba6375853a4e76b2a378b468211c744\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get toAddress and fromAddress by Conversation ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/{{conversationId}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mypurecloud",
+						"com",
+						"au"
+					],
+					"path": [
+						"api",
+						"v2",
+						"conversations",
+						"messages",
+						"{{conversationId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/{{conversationId}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"api",
+								"v2",
+								"conversations",
+								"messages",
+								"{{conversationId}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Example: Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/{{conversationId}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"api",
+								"v2",
+								"conversations",
+								"messages",
+								"{{conversationId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6357"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Nov 2022 02:32:36 GMT"
+						},
+						{
+							"key": "ININ-Correlation-Id",
+							"value": "8386bd3e-f2bf-48a5-90eb-0b6e23640bf6"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=600; includeSubDomains"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 e3cb2b95dc77970fa884677fa82b833e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SYD1-C2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "ASx-s0gGYHH2TxAujT_FgpSFaP6wkrNfNCVyx43CwRCWdcavpYce8g=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"817da6cd-a1dc-456c-b627-45b086cf79ef\",\n    \"participants\": [\n        {\n            \"id\": \"8f13d713-8a78-4e2c-aeaf-f8ad8af324d4\",\n            \"startTime\": \"2022-11-24T05:14:43.315Z\",\n            \"connectedTime\": \"2022-11-24T05:14:43.323Z\",\n            \"purpose\": \"customer\",\n            \"state\": \"connected\",\n            \"held\": false,\n            \"wrapupRequired\": false,\n            \"queue\": {\n                \"id\": \"000caec3-ec87-42d2-9a98-168fd53375a8\",\n                \"selfUri\": \"/api/v2/routing/queues/000caec3-ec87-42d2-9a98-168fd53375a8\"\n            },\n            \"attributes\": {\n                \"SurveyStatus\": \"Not Offered\",\n                \"SurveyTrigger\": \"Not Triggered\"\n            },\n            \"provider\": \"PureCloud Messaging\",\n            \"externalContact\": {\n                \"id\": \"c22f50be-4fb2-485b-bb87-b1d737c695ee\",\n                \"selfUri\": \"/api/v2/externalcontacts/contacts/c22f50be-4fb2-485b-bb87-b1d737c695ee\"\n            },\n            \"peer\": \"c2196eb0-fd59-4aa9-9173-3cb3869aef39\",\n            \"journeyContext\": {\n                \"customer\": {\n                    \"id\": \"334cf6d2-6492-4421-966f-c8ffbc245aff\",\n                    \"idType\": \"cookie\"\n                },\n                \"customerSession\": {\n                    \"id\": \"8c6fe864-2223-4b74-98d8-6b3c894aafa2\",\n                    \"type\": \"web\"\n                }\n            },\n            \"toAddress\": {\n                \"addressNormalized\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n                \"addressRaw\": \"b0835767-8b54-4265-bc0f-cab53543f0c1\"\n            },\n            \"fromAddress\": {\n                \"addressNormalized\": \"e8e6252f-0704-4503-954f-29b59a9de13e\",\n                \"addressRaw\": \"e8e6252f-0704-4503-954f-29b59a9de13e\"\n            },\n            \"messages\": [\n                {\n                    \"messageId\": \"5349c5f70d031d4e22b03cfd7484a8e3\",\n                    \"messageURI\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/5349c5f70d031d4e22b03cfd7484a8e3\",\n                    \"messageStatus\": \"received\",\n                    \"messageSegmentCount\": 1,\n                    \"messageTime\": \"2022-11-24T05:14:43.315Z\",\n                    \"media\": [],\n                    \"stickers\": [],\n                    \"messageMetadata\": {\n                        \"type\": \"Text\",\n                        \"events\": [],\n                        \"content\": []\n                    }\n                }\n            ],\n            \"type\": \"webmessaging\"\n        },\n        {\n            \"id\": \"b929a751-26eb-44b3-a1dd-e7d2340ec04b\",\n            \"startTime\": \"2022-11-24T05:14:43.318Z\",\n            \"connectedTime\": \"2022-11-24T05:14:43.364Z\",\n            \"endTime\": \"2022-11-24T17:14:45.510Z\",\n            \"purpose\": \"workflow\",\n            \"state\": \"disconnected\",\n            \"disconnectType\": \"transfer\",\n            \"held\": false,\n            \"wrapupRequired\": false,\n            \"attributes\": {},\n            \"provider\": \"PureCloud Messaging\",\n            \"peer\": \"d871c4ae-bc82-4d8d-aa96-5eb839bc5a51\",\n            \"toAddress\": {\n                \"addressNormalized\": \"e8e6252f-0704-4503-954f-29b59a9de13e\",\n                \"addressRaw\": \"e8e6252f-0704-4503-954f-29b59a9de13e\"\n            },\n            \"fromAddress\": {\n                \"addressNormalized\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n                \"addressRaw\": \"b0835767-8b54-4265-bc0f-cab53543f0c1\"\n            },\n            \"messages\": [\n                {\n                    \"messageId\": \"3ba6375853a4e76b2a378b468211c744\",\n                    \"messageURI\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/3ba6375853a4e76b2a378b468211c744\",\n                    \"messageStatus\": \"delivery-success\",\n                    \"messageSegmentCount\": 1,\n                    \"messageTime\": \"2022-11-24T05:14:45.242Z\",\n                    \"media\": [],\n                    \"stickers\": [],\n                    \"messageMetadata\": {\n                        \"type\": \"Text\",\n                        \"events\": [],\n                        \"content\": []\n                    }\n                },\n                {\n                    \"messageId\": \"5eda7ca2d1d46c90bc8ec8ad2d36ff03\",\n                    \"messageURI\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/5eda7ca2d1d46c90bc8ec8ad2d36ff03\",\n                    \"messageStatus\": \"delivery-failed\",\n                    \"messageSegmentCount\": 1,\n                    \"messageTime\": \"2022-11-24T17:14:45.316Z\",\n                    \"media\": [],\n                    \"stickers\": [],\n                    \"messageMetadata\": {\n                        \"type\": \"Text\",\n                        \"events\": [],\n                        \"content\": []\n                    },\n                    \"errorInfo\": {\n                        \"message\": \"Message delivery failed with the following payload: [InvalidDestination - Websocket no longer active]\",\n                        \"code\": \"DELIVERY_FAILED\",\n                        \"messageWithParams\": \"Message delivery failed with the following payload: [{errorPayload}]\",\n                        \"messageParams\": {\n                            \"errorPayload\": \"InvalidDestination - Websocket no longer active\"\n                        },\n                        \"details\": [],\n                        \"errors\": []\n                    }\n                }\n            ],\n            \"type\": \"webmessaging\"\n        },\n        {\n            \"id\": \"2a8cbd76-ee6b-4b3f-a2f7-350261b8fb77\",\n            \"startTime\": \"2022-11-24T17:14:45.557Z\",\n            \"connectedTime\": \"2022-11-24T17:14:45.621Z\",\n            \"purpose\": \"acd\", //Check if the \"purpose\" attribute is equal to \"acd\"\n            \"state\": \"connected\",\n            \"held\": false,\n            \"wrapupRequired\": false,\n            \"queue\": {\n                \"id\": \"000caec3-ec87-42d2-9a98-168fd53375a8\",\n                \"selfUri\": \"/api/v2/routing/queues/000caec3-ec87-42d2-9a98-168fd53375a8\"\n            },\n            \"attributes\": {},\n            \"provider\": \"PureCloud Messaging\",\n            \"peer\": \"d871c4ae-bc82-4d8d-aa96-5eb839bc5a51\",\n            \"conversationRoutingData\": {\n                \"queue\": {\n                    \"id\": \"000caec3-ec87-42d2-9a98-168fd53375a8\",\n                    \"selfUri\": \"/api/v2/routing/queues/000caec3-ec87-42d2-9a98-168fd53375a8\"\n                },\n                \"priority\": 0,\n                \"skills\": [],\n                \"scoredAgents\": []\n            },\n            \"toAddress\": {\n                \"addressNormalized\": \"e8e6252f-0704-4503-954f-29b59a9de13e\", //toAddress needs to be exctracted where the \"purpose\" is equals \"acd\" \n                \"addressRaw\": \"e8e6252f-0704-4503-954f-29b59a9de13e\" \n            },\n            \"fromAddress\": {\n                \"addressNormalized\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\", //fromAddress needs to be extracted where the \"purpose\" is equals \"acd\"\n                \"addressRaw\": \"b0835767-8b54-4265-bc0f-cab53543f0c1\"\n            },\n            \"messages\": [\n                {\n                    \"messageId\": \"f96b547dc2e1a7df845efcf9542380eb\",\n                    \"messageURI\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/f96b547dc2e1a7df845efcf9542380eb\",\n                    \"messageStatus\": \"delivery-failed\",\n                    \"messageSegmentCount\": 1,\n                    \"messageTime\": \"2022-11-24T17:14:51.309Z\",\n                    \"media\": [],\n                    \"stickers\": [],\n                    \"messageMetadata\": {\n                        \"type\": \"Text\",\n                        \"events\": [],\n                        \"content\": []\n                    },\n                    \"errorInfo\": {\n                        \"message\": \"Message delivery failed with the following payload: [InvalidDestination - Websocket no longer active]\",\n                        \"code\": \"DELIVERY_FAILED\",\n                        \"messageWithParams\": \"Message delivery failed with the following payload: [{errorPayload}]\",\n                        \"messageParams\": {\n                            \"errorPayload\": \"InvalidDestination - Websocket no longer active\"\n                        },\n                        \"details\": [],\n                        \"errors\": []\n                    }\n                },\n                {\n                    \"messageId\": \"4507d8f2692d9a3f97e54afdf417808a\",\n                    \"messageURI\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/4507d8f2692d9a3f97e54afdf417808a\",\n                    \"messageStatus\": \"delivery-failed\",\n                    \"messageSegmentCount\": 1,\n                    \"messageTime\": \"2022-11-24T17:15:16.520Z\",\n                    \"media\": [],\n                    \"stickers\": [],\n                    \"messageMetadata\": {\n                        \"type\": \"Text\",\n                        \"events\": [],\n                        \"content\": []\n                    },\n                    \"errorInfo\": {\n                        \"message\": \"Message delivery failed with the following payload: [InvalidDestination - Websocket no longer active]\",\n                        \"code\": \"DELIVERY_FAILED\",\n                        \"messageWithParams\": \"Message delivery failed with the following payload: [{errorPayload}]\",\n                        \"messageParams\": {\n                            \"errorPayload\": \"InvalidDestination - Websocket no longer active\"\n                        },\n                        \"details\": [],\n                        \"errors\": []\n                    }\n                },\n                {\n                    \"messageId\": \"471baa7c349ce168c6db8ab44afd8c92\",\n                    \"messageURI\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/471baa7c349ce168c6db8ab44afd8c92\",\n                    \"messageStatus\": \"delivery-failed\",\n                    \"messageSegmentCount\": 1,\n                    \"messageTime\": \"2022-11-24T17:15:41.737Z\",\n                    \"media\": [],\n                    \"stickers\": [],\n                    \"messageMetadata\": {\n                        \"type\": \"Text\",\n                        \"events\": [],\n                        \"content\": []\n                    },\n                    \"errorInfo\": {\n                        \"message\": \"Message delivery failed with the following payload: [InvalidDestination - Websocket no longer active]\",\n                        \"code\": \"DELIVERY_FAILED\",\n                        \"messageWithParams\": \"Message delivery failed with the following payload: [{errorPayload}]\",\n                        \"messageParams\": {\n                            \"errorPayload\": \"InvalidDestination - Websocket no longer active\"\n                        },\n                        \"details\": [],\n                        \"errors\": []\n                    }\n                }\n            ],\n            \"type\": \"webmessaging\"\n        }\n    ],\n    \"otherMediaUris\": [],\n    \"selfUri\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Send Agentless Outbound",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"fromAddress\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\r\n   \"toAddress\": \"e8e6252f-0704-4503-954f-29b59a9de13e\",\r\n   \"toAddressMessengerType\": \"open\",\r\n   \"textBody\": \"<PASTE THE PRIVACY MESSAGE HERE>\",\r\n   \"messagingTemplate\": {\r\n      \"responseId\": \"\",\r\n      \"parameters\": [\r\n         {\r\n            \"id\": \"\",\r\n            \"value\": \"\"\r\n         }\r\n      ]\r\n   },\r\n   \"useExistingActiveConversation\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/agentless",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mypurecloud",
+						"com",
+						"au"
+					],
+					"path": [
+						"api",
+						"v2",
+						"conversations",
+						"messages",
+						"agentless"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"fromAddress\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\", //fromAddress extracted from step 6\r\n   \"toAddress\": \"e8e6252f-0704-4503-954f-29b59a9de13e\", //toAddress extracted from step 6\r\n   \"toAddressMessengerType\": \"open\",\r\n   \"textBody\": \"<PASTE THE PRIVACY MESSAGE HERE>\",\r\n   \"messagingTemplate\": {\r\n      \"responseId\": \"\",\r\n      \"parameters\": [\r\n         {\r\n            \"id\": \"\",\r\n            \"value\": \"\"\r\n         }\r\n      ]\r\n   },\r\n   \"useExistingActiveConversation\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/agentless",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"api",
+								"v2",
+								"conversations",
+								"messages",
+								"agentless"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Example: Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"fromAddress\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\r\n   \"toAddress\": \"e8e6252f-0704-4503-954f-29b59a9de13e\",\r\n   \"toAddressMessengerType\": \"open\",\r\n   \"textBody\": \"<PASTE THE PRIVACY MESSAGE HERE>\",\r\n   \"messagingTemplate\": {\r\n      \"responseId\": \"\",\r\n      \"parameters\": [\r\n         {\r\n            \"id\": \"\",\r\n            \"value\": \"\"\r\n         }\r\n      ]\r\n   },\r\n   \"useExistingActiveConversation\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mypurecloud.com.au/api/v2/conversations/messages/agentless",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mypurecloud",
+								"com",
+								"au"
+							],
+							"path": [
+								"api",
+								"v2",
+								"conversations",
+								"messages",
+								"agentless"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "542"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Nov 2022 02:55:21 GMT"
+						},
+						{
+							"key": "ININ-Correlation-Id",
+							"value": "9f834cb9-00df-4e82-9ffd-d85b618a0608"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=600; includeSubDomains"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 e3cb2b95dc77970fa884677fa82b833e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SYD1-C2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "23E3XC8yB3WEBPtDknooqMGjBGdAGHuMtvbhZVvNr-BndTqYwl_6xA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fe8ec9774c08ce12158f56946c26f7bd\",\n    \"conversationId\": \"817da6cd-a1dc-456c-b627-45b086cf79ef\",\n    \"fromAddress\": \"4b6aaa6c-a580-46ac-b9e1-0f090911dc46\",\n    \"toAddress\": \"e8e6252f-0704-4503-954f-29b59a9de13e\",\n    \"messengerType\": \"open\",\n    \"textBody\": \"<PASTE THE PRIVACY MESSAGE HERE>\",\n    \"messagingTemplate\": {\n        \"responseId\": \"\",\n        \"parameters\": [\n            {\n                \"id\": \"\",\n                \"value\": \"\"\n            }\n        ]\n    },\n    \"useExistingActiveConversation\": true,\n    \"timestamp\": \"2022-11-25T02:55:21.104Z\",\n    \"selfUri\": \"/api/v2/conversations/messages/817da6cd-a1dc-456c-b627-45b086cf79ef/messages/fe8ec9774c08ce12158f56946c26f7bd\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "conversationId",
+			"value": "817da6cd-a1dc-456c-b627-45b086cf79ef"
+		},
+		{
+			"key": "messageId",
+			"value": "3ba6375853a4e76b2a378b468211c744"
+		},
+		{
+			"key": "access_token",
+			"value": "06H1YaHcljEfctBGfY3TQHGwITBz3ru8H-pnstDnIm0dwtmDw"
+		}
+	]
+}
